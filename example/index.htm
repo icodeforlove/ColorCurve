@@ -1,56 +1,79 @@
 <!DOCTYPE HTML>
 <html>
-  <head>
-    <title>Filters</title>
-    <meta charset="windows-1252">
-    <script src="script.js"></script>
-    <script src="../src/ColorCurve.min.js"></script>
-    <style>
+	<head>
+		<title>Filters</title>
+		<meta charset="windows-1252">
+		<script src="script.js"></script>
+		<script src="../src/ColorCurve.js"></script>
+		<style>
+			a {
+				color: #dddddd;
+				text-decoration: none;
+			}
+			a: hover {
+				color: #ee44dd;
+			}
+			canvas {
+				border: 1px white solid;
+			}
+			body {
+				background: #222222;
+				color: #dddddd;
+				font-family: "Georgia";
+				font-size: 14px;
+			}
+			#main {
+				width: 850px;
+				margin: auto;
+			}
+			#upper {
+				width: 402px;
+				margin: auto;
+				margin-bottom: 10px;
+			}
+			#bottom {
+				width: 800px;
+				margin: auto;
+			}
+			#selectorR {
+				background: #641A0D;
+			}
+			#selectorG {
+				background: #1A640D;
+			}
+			#selectorB {
+				background: #1A0D64;
+			}
+			#credits {
+				text-align: center;
+				margin-top: 20px;
+			}
+			#settings {
+			  text-align: center;
+			  margin-bottom: 10px;
+			}
+		</style>
+	</head>
 
-      a {  color: #dddddd; text-decoration: none;}
-      a:hover { color: #ee44dd; }
-        canvas {
-            border: 1px white solid;
-            
-        }
-        body {
-          background: #222222;
-          color: #dddddd;
-          font-family:"Georgia";
-          font-size: 14px;
+	<body onload="start()">
+		<div id="main">
+			<div id="upper">
+				<div>
+					<canvas id="CvOriginal" height="400" width="400"></canvas>
+				</div>
 
-        }
-        #main { width: 850px; margin:auto; }
-        #upper { width : 402px; margin: auto;  margin-bottom: 10px;}
-        #bottom { width: 800px; margin: auto; }
-        #selectorR { background: #641A0D;}
-        #selectorG { background: #1A640D;}
-        #selectorB { background: #1A0D64;}
+				<canvas id="CvModified" height="400" width="400"></canvas>
 
-        #credits {
-          text-align:center;
-          margin-top: 20px;
-        }
-
-    </style>
-  </head>
-  <body onload="start()">
-  <div id="main">
-  	<div id="upper">
-      <div>
-    	<canvas id="CvOriginal" height="400" width="400"></canvas>     
-    </div>
-		  <canvas id="CvModified" height="400" width="400"></canvas>
-      
-    </div>
-  <div id="bottom">
-      <canvas id="selectorR" height="256" width="256"></canvas>
-      <canvas id="selectorG" height="256" width="256"></canvas>
-      <canvas id="selectorB" height="256" width="256"></canvas>
-  </div>
-  <div id="credits">
-    <a href="http://github.com/vaguilera/ColorCurve">ColorCurve.JS</a> example by Victor Aguilera Github
-  </div>
-  </div>
-  </body>
- </html>
+			</div>
+			<div id="settings"></div>
+			<div id="bottom">
+				<canvas id="selectorR" height="256" width="256"></canvas>
+				<canvas id="selectorG" height="256" width="256"></canvas>
+				<canvas id="selectorB" height="256" width="256"></canvas>
+			</div>
+			<div id="credits">
+				<a href="http://github.com/vaguilera/ColorCurve">ColorCurve.JS</a> example by Victor Aguilera Github
+			</div>
+		</div>
+	</body>
+</html>
